@@ -16,11 +16,11 @@
 
 # commentsテーブル
 
-| Column    | Type       | Options     |
-| --------- | ---------- | ----------- |
-| text      | text       | null: false |
-| user      | references | null: false |
-| prototype | references | null: false |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| text      | text       | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| prototype | references | null: false, foreign_key: true |
 
 - belongs_to :prototype
 - belongs_to :user
@@ -28,13 +28,12 @@
 
 # prototypesテーブル
 
-| Column        | Type       | Options     |
-| ------------- | ---------- | ----------- |
-| title         | string     | null: false |
-| catch_copy    | text       | null: false |
-| concept       | text       | null: false |
-| image         | string     | null: false |
-| user          | references | null: false |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| catch_copy    | text       | null: false                    |
+| concept       | text       | null: false                    |
+| user          | references | null: false, foreign_key: true |
 
 - has_many :comments
 - belongs_to :user
